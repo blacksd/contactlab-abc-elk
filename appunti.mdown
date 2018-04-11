@@ -1,0 +1,55 @@
+# C
+
+## Intro
+
+Enter MySQL
+we store all of the data of all of our customer here
+Imagine it as a table
+(table image)
+
+index?
+
+- Is MySQL good or bad?
+time series
+scale-up
+"group by" only efficient for index
+schema updates difficult
+= needs heavy tuning
+
+- noSQL FTW!
+time series
+scale-out 
+schema-flexible
+large datasets
+
+- elasticsearch = full text search
+
+## Elasticsearch
+
+Full text search and analytics engine
+
+
+
+## A step back
+
+It's actually "The Elastic Stack"
+
+Different components for different stages
+
+- Ingestion (raw sources to data): Beats, Logstash
+- Storage (archiving): Elasticsearch
+- Visualization (showing): Kibana
+
+(image of the stack)
+
+### Elasticsearch
+
+The hearth
+
+### Logstash and Beats
+
+Logstash Pipeline input-filter-output
+
+Beats:
+
+- Get data from log files, network, other... delivered to Logstash
