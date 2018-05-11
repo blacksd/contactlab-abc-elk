@@ -26,6 +26,10 @@
 				text-align: left;
 				margin: 20px 10%;
 			}
+
+			.reveal p.nopad {
+				margin: 0 0;
+			}
 		
 			.reveal ul {
 				width: 100%;
@@ -45,7 +49,7 @@
 			}
 		
 			.reveal pre code {
-				padding: 10px;
+				padding: 0px 10px;
 			}
 		
 			html.dimbg .slide-background.present {
@@ -86,13 +90,13 @@
 					<section>
 						<h2>Why this ABC?</h2>
 						<p>Widely adopted technology, with great benefits</p>
-						<p class="fragment">...</p>
+						<p class="fragment">TODO: fill</p>
 						<p class="fragment">Aaand... it's a challenge :)</p>
 					</section>
 					<section data-background="images/the_who.jpg" data-state="dimmerbg">
 						<h2>Know your audience</h2>
-						<p>You're <em>probably</em> here for one of two reasons:</p>
-						<p class="fragment">Elasticsearch: don't care for visualization</p>
+						<p>You're <em>probably</em> here for one of the two:</p>
+						<p class="fragment">Elasticsearch: don't care about visualization</p>
 						<p class="fragment">Kibana: don't care for backend tech</p>
 						<img class="fragment" src="images/bear_with_me.jpg" width="350px"/>
 						
@@ -110,6 +114,78 @@
 				</section>
 				<section id="introduction">
 					<section>
+						<h2>What is Elasticsearch?</h2>
+						<p>Elasticsearch is a search and analytics engine.</p>
+						<ul>
+							<li>distributed</li>
+							<li>full-text</li>
+							<li>near-real time</li>
+						</ul>
+					</section>
+					<section>
+						<img src="images/elk-components.png" />
+						<p>Actually a stack of components (<em>ELK</em> stack)</p>
+					</section>
+					<section>
+						<h2>Kibana</h2>
+						<p>Kibana is a data visualization tool</p>
+					</section>
+				</section>
+				<section id="sql to nosql">
+					<section>
+						<h2>SQL vs. noSQL (excerpt)</h2>
+						<table name="SQLnoSQL">
+							<thead>
+								<tr>
+									<th></th>
+									<th>SQL</th>
+									<th>noSQL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Flexibility</td>
+									<td>Schema-oriented</td>
+									<td>Schemaless</td>
+								</tr>
+								<tr>
+									<td>Performance</td>
+									<td>Fixed indexes</td>
+									<td>Inverted index</td>
+								</tr>
+								<tr>
+									<td>Scalability</td>
+									<td>Needs proxying and sharding</td>
+									<td>Cluster and replica native</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<p class="nopad">Schema-oriented (SQL)</p>
+						<pre>
+								<code data-noescape> 
++----------------------+----------+-----------------+
+| GROUP_NAME           | GROUP_PK | DB_NAME         |
++----------------------+----------+-----------------+
+| Name 001             |  2000000 | DB_1            |
++----------------------+----------+-----------------+
+								</code>
+							</pre>
+						<p class="nopad">"Schemaless" (noSQL)</p>
+						<pre>
+								<code data-noescape> 
+{
+	"response_length": "8192",
+	"@timestamp": "2018-05-11T09:39:07.000Z",
+	"port": 8080,
+	"service": "CONTACTHUB"
+}
+								</code>
+						</pre>
+					</section>
+					<section>
+						<h2>Performance</h2>
 
 					</section>
 				</section>
@@ -124,10 +200,12 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				width: 970,
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
