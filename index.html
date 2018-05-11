@@ -20,14 +20,98 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style type="text/css">
+			.reveal p,
+			.reveal li {
+				text-align: left;
+				margin: 20px 10%;
+			}
+		
+			.reveal ul {
+				width: 100%;
+			}
+		
+			.reveal img,
+			.reveal section img {
+				border: 0px;
+				background: 0%;
+				box-shadow: 0 0 0 transparent;
+			}
+		
+			.reveal pre {
+				width: 100%;
+				box-shadow: 0 0 0 transparent;
+				margin: 0px;
+			}
+		
+			.reveal pre code {
+				padding: 10px;
+			}
+		
+			html.dimbg .slide-background.present {
+				opacity: 0.70;
+			}
+			html.dimmerbg .slide-background.present {
+				opacity: 0.50;
+			}
+			html.dimmestbg .slide-background.present {
+				opacity: 0.25;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				<section data-background="images/elk-background.PNG" data-state="dimmestbg">
+					<h1>Elasticsearch, Kibana & Co.</h1>
+					<h4>TODO: tagline here</h4>
+					<!-- <p>
+							<small>
+								<a href="http://blacksd.tech">Marco Bulgarini</a>, Platform Operations
+							</small>
+						</p> -->
+				</section>
+				<section id="opening">
+					<section>
+						<h2>#whoami</h2>
+						<p>
+							Marco, DevOps Tech Lead, Platform Operations 
+						</p>
+						<p>
+							Push buttons, talk to people 
+						</p>
+						<p class="fragment"> ...even at the same time!</p>
+					</section>
+					<!-- <section data-background="images/dockerconeu2017.jpg" data-state="dimbg"> -->
+					<section>
+						<h2>Why this ABC?</h2>
+						<p>Widely adopted technology, with great benefits</p>
+						<p class="fragment">...</p>
+						<p class="fragment">Aaand... it's a challenge :)</p>
+					</section>
+					<section data-background="images/the_who.jpg" data-state="dimmerbg">
+						<h2>Know your audience</h2>
+						<p>You're <em>probably</em> here for one of two reasons:</p>
+						<p class="fragment">Elasticsearch: don't care for visualization</p>
+						<p class="fragment">Kibana: don't care for backend tech</p>
+						<img class="fragment" src="images/bear_with_me.jpg" width="350px"/>
+						
+					</section>
+					<section data-background="images/nerd.jpg" data-state="dimbg">
+						<h2>Nerd Alert!</h2>
+						<p>I'll make extensive use of:</p>
+						<ul>
+							<li>techy terms</li>
+							<li>obscure memes</li>
+							<li>console commands</li>
+							<li>code</li>
+						</ul>
+					</section>
+				</section>
 				<section id="introduction">
-					<section>Slide 1</section>
-					<section>Slide 2</section>
-					
+					<section>
+
+					</section>
 				</section>
 			</div>
 		</div>
