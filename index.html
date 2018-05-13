@@ -30,6 +30,9 @@
 			.reveal p.nopad {
 				margin: 0 0;
 			}
+			.reveal p.nohpad {
+				margin: 20px 0;
+			}
 		
 			.reveal ul {
 				width: 100%;
@@ -89,8 +92,8 @@
 					<!-- <section data-background="images/dockerconeu2017.jpg" data-state="dimbg"> -->
 					<section>
 						<h2>Why this ABC?</h2>
-						<p>Widely adopted technology, with great benefits</p>
-						<p class="fragment">TODO: fill</p>
+						<p>Widely adopted, great benefits</p>
+						<p class="fragment">It's an enabling tech</p>
 						<p class="fragment">Aaand... it's a challenge :)</p>
 					</section>
 					<section data-background="images/the_who.jpg" data-state="dimmerbg">
@@ -121,15 +124,75 @@
 							<li>full-text</li>
 							<li>near-real time</li>
 						</ul>
+						<p class="fragment">So... a database :)</p>
 					</section>
 					<section>
-						<img src="images/elk-components.png" />
+						<p>The basic data element is a JSON Document</p>
+						<pre>
+							<code data-noescape> 
+{
+	"response_length": "8192",
+	"@timestamp": "2018-05-11T09:39:07.000Z",
+	"port": 8080,
+	"service": "CONTACTHUB"
+}
+							</code>
+						</pre>
+				    </section>
+					<section>
+						<h3>A little internals</h3>
+						<p class="nohpad">Documents are grouped in <strong>indexes</strong>, partitioned in <strong>shards</strong> and allocated in <strong>nodes</strong>.</p>
+						<table name="sqlelastic">
+							<thead>
+								<tr>
+									<td><strong>SQL</strong></td>
+									<td><strong>Elasticsearch</strong></td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Database</td>
+									<td>Index</td>
+								</tr>
+								<tr>
+									<td>Table</td>
+									<td>Type***</td>
+								</tr>
+								<tr>
+									<td>Column</td>
+									<td>Field</td>
+								</tr>
+								<tr>
+									<td>Document</td>
+									<td>Row</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<h3>Graphically</h3>
+						<!-- TODO: add Cerebro screenshot -->
+					</section>
+					<section>
+						<img src="images/elk-components.png"  width="500px"/>
 						<p>Actually a stack of components (<em>ELK</em> stack)</p>
 					</section>
+				</section>
+				<section>
 					<section>
-						<h2>Kibana</h2>
-						<p>Kibana is a data visualization tool</p>
+						<h2>Enter Kibana</h2>
+						<p>Kibana is a data visualization tool built on top of ES</p>
+						<p class="fragment">
+							Permits complex queries
+						</p>
+						<p class="fragment">
+							Works on the <em>actual data</em>.
+						</p>
 					</section>
+					<section>
+						<p>Build <em>visualizations</em>, composed in dashboards</p>
+					</section>
+				</section>
 				</section>
 				<section id="sql to nosql">
 					<section>
@@ -158,10 +221,20 @@
 									<td>Needs proxying and sharding</td>
 									<td>Cluster and replica native</td>
 								</tr>
+								<tr>
+									<td>Consistency</td>
+									<td>ACID</td>
+									<td>BASE</td>
+								</tr>
 							</tbody>
 						</table>
 					</section>
 					<section>
+						<h2>Flexibility</h2>
+						<p>Data does not need a schema</p>
+						<p class="fragment">Any JSON can be entered in an index</p>
+					</section>
+					<section>						
 						<p class="nopad">Schema-oriented (SQL)</p>
 						<pre>
 								<code data-noescape> 
@@ -176,18 +249,58 @@
 						<pre>
 								<code data-noescape> 
 {
-	"response_length": "8192",
-	"@timestamp": "2018-05-11T09:39:07.000Z",
-	"port": 8080,
-	"service": "CONTACTHUB"
+  "response_length": "8192",
+  "@timestamp": "2018-05-11T09:39:07.000Z",
+  "port": 8080,
+  "service": "CONTACTHUB"
 }
 								</code>
 						</pre>
 					</section>
 					<section>
 						<h2>Performance</h2>
-
+						<p>It's fast</p>
+						<p class="fragment">No, like,<em>really</em> fast.</p>
 					</section>
+					<section>
+						<h2>Querying on SQL vs Elasticsearch</h2>
+					</section>
+					<section>
+						<h2>Scalability</h2>
+						<p>Horizontal growth: just add nodes to</p>
+						<ul>
+							<li class="fragment">Improve Performance</li>
+							<li class="fragment">Increase resiliency</li>
+							<li class="fragment">Store more data</li>
+						</ul>
+						<img src="images/sharding.png" alt="ES Sharding" width="400px" style="background:white" />
+					</section>
+				</section>
+				<section id="demo" data-background="images/praying-otter.jpg">
+					<h1>Demo time!</h1>
+				</section>
+				<section id="adopting">
+					<section>
+						<h2>Let's throw away SQL</h2>
+						<p>That's not what I said! ಠ_ಠ</p>
+						<p class="fragment">Carefully evaluate if ES is good for your project!</p>
+					</section>
+					<section>
+						<p>Does my project...</p>
+						<ul>
+							<li>Need ACID transactions?</li>
+							<li>Uses JSON to represent data internally?</li>
+							<li>Will likely change schema one or more times?</li>
+							<li>Will scale rapidly?</li>
+							<li>Benefit from accessing data in predictable times?</li>
+						</ul>
+					</section>
+					<section>
+						<h2>I want Kibana in my project</h2>
+					</section>
+				</section>
+				<section id="closing">
+
 				</section>
 			</div>
 		</div>
