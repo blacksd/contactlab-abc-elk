@@ -91,8 +91,8 @@
 					</section>
 					<section>
 						<h2>Why this ABC?</h2>
-						<p>Widely adopted by great players</p>
-						<p class="fragment">It's an enabling tech, new use cases to be found</p>
+						<p>It's an enabling tech, new use cases to be found</p>
+						<p class="fragment">Widely adopted by great players</p>
 						<p class="fragment">Aaand... it's a challenge :)</p>
 					</section>
 					<section data-background="images/the_who.jpg" data-state="dimmerbg">
@@ -108,6 +108,7 @@
 						<p>This is a technical ABC; I'll make use of</p>
 						<ul>
 							<li>techy terms</li>
+							<li>your inner MySQL knowledge</li>
 							<li>obscure memes</li>
 							<li>code</li>
 						</ul>
@@ -238,8 +239,9 @@
 					</section>
 					<section>
 						<h2>Flexibility</h2>
-						<p>Data does not need a schema</p>
+						<p>Data does not <em>need</em> a schema strictly to adhere to</p>
 						<p class="fragment">Any JSON can be entered in an index</p>
+						<p class="fragment">Different documents in an index can have different fields</p>
 					</section>
 					<section>						
 						<p class="nopad">Schema-oriented (SQL)</p>
@@ -267,10 +269,16 @@
 					<section>
 						<h2>Performance</h2>
 						<p>It's fast</p>
-						<p class="fragment">No, like,<em>really</em> fast.</p>
+						<p class="fragment">No, like, <em>really</em> fast.</p>
 					</section>
+					
 					<section>
 						<h2>Querying on SQL vs Elasticsearch</h2>
+						<p>SQL DBs use <em>indexes</em> to store key informations in order to speed up queries</p>
+						<p class="fragment"><strong>Very bad</strong> performance on non indexed data</p>
+						<p>ES use<em>inverted indexes</em> to archive every unique word for a field and the document where they appear</p>
+						<p class="fragment"><strong>Extremely good</strong> performance on all data</p>
+
 					</section>
 					<section>
 						<h2>Scalability</h2>
@@ -290,7 +298,13 @@
 					<section>
 						<h2>Adopting the ELK stack</h2>
 						<p>Everything is Open Source</p>
-						<p class="fragment">Can use a single component (es. Logstash to transform data, or Kibana to view)</p>
+						<p class="fragment">Can use/adapt a single component (es. Logstash to transform data, or Kibana to view)</p>
+						<p class="fragment">Extend the usage of the components is definitely doable*</p>
+						<br/>
+						<br/>
+						<p class="fragment">
+							<small>*some Java assembling required</small>
+						</p>
 					</section>
 					<section>
 						<h2>Let's throw away SQL</h2>
@@ -309,12 +323,20 @@
 					</section>
 					<section>
 						<h2>I want Kibana in my project!</h2>
-						<p>Or: "I need to extract and view data processed by my application"</p>
+						<p>Or: "I need to make sense with the data my application produces or processes"</p>
+						<p class="fragment">Remember that Kibana ♡ Elasticsearch - not any other data sources!</p>
+						<p class="fragment">Other tool as <a href="http://superset">Superset</a> or <a href="http://grafana.org">Grafana</a> allow multiple sources</p>
+					</section>
+					<section>
+						<p>If you stick with the ELK stack...</p>
 						<ul>
 							<li class="fragment">Visualizations and dashboards can be embedded in external projects</li>
-							<li class="fragment">Security and </li>
+							<li class="fragment">Monitoring and alerting</li>
+							<li class="fragment">Machine Learning: Anomaly Detection for Time Series
+							</li>
+							
 						</ul>
-						<p class="fragment">Remember that Kibana ♡ Elasticsearch - no other data sources are allowed!</p>
+						<img src="images/machine-learning.gif" alt="" srcset="" height="330px"/> 
 					</section>
 				</section>
 				<section id="closing">
