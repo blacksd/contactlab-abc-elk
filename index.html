@@ -69,9 +69,9 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-background="images/elk-background.PNG" data-state="dimmestbg">
+				<section data-background="images/elk-background.png" data-state="dimmestbg">
 					<h1>Elasticsearch, Kibana & Co.</h1>
-					<h4>TODO: tagline here</h4>
+					<h4>An introduction</h4>
 					<!-- <p>
 							<small>
 								<a href="http://blacksd.tech">Marco Bulgarini</a>, Platform Operations
@@ -85,15 +85,14 @@
 							Marco, DevOps Tech Lead, Platform Operations 
 						</p>
 						<p>
-							Push buttons, talk to people 
+							Push buttons, talk to people, ingest data
 						</p>
 						<p class="fragment"> ...even at the same time!</p>
 					</section>
-					<!-- <section data-background="images/dockerconeu2017.jpg" data-state="dimbg"> -->
 					<section>
 						<h2>Why this ABC?</h2>
-						<p>Widely adopted, great benefits</p>
-						<p class="fragment">It's an enabling tech</p>
+						<p>Widely adopted by great players</p>
+						<p class="fragment">It's an enabling tech, new use cases to be found</p>
 						<p class="fragment">Aaand... it's a challenge :)</p>
 					</section>
 					<section data-background="images/the_who.jpg" data-state="dimmerbg">
@@ -106,13 +105,13 @@
 					</section>
 					<section data-background="images/nerd.jpg" data-state="dimbg">
 						<h2>Nerd Alert!</h2>
-						<p>I'll make extensive use of:</p>
+						<p>This is a technical ABC; I'll make use of</p>
 						<ul>
 							<li>techy terms</li>
 							<li>obscure memes</li>
-							<li>console commands</li>
 							<li>code</li>
 						</ul>
+						<p class="fragment">Feel free to stop me for questions :)</p>
 					</section>
 				</section>
 				<section id="introduction">
@@ -120,9 +119,9 @@
 						<h2>What is Elasticsearch?</h2>
 						<p>Elasticsearch is a search and analytics engine.</p>
 						<ul>
-							<li>distributed</li>
-							<li>full-text</li>
 							<li>near-real time</li>
+							<li>full-text</li>
+							<li>distributed</li>
 						</ul>
 						<p class="fragment">So... a database :)</p>
 					</section>
@@ -171,10 +170,12 @@
 					</section>
 					<section>
 						<h3>Graphically</h3>
-						<!-- TODO: add Cerebro screenshot -->
+						<img src="images/cerebro.png" width="420px" />
+						<img src="images/phpmyadmin.png" width="480px" />
+						
 					</section>
 					<section>
-						<img src="images/elk-components.png"  width="500px"/>
+						<img src="images/elk-components.png" width="500px"/>
 						<p>Actually a stack of components (<em>ELK</em> stack)</p>
 					</section>
 				</section>
@@ -182,21 +183,27 @@
 					<section>
 						<h2>Enter Kibana</h2>
 						<p>Kibana is a data visualization tool built on top of ES</p>
-						<p class="fragment">
-							Permits complex queries
-						</p>
-						<p class="fragment">
-							Works on the <em>actual data</em>.
-						</p>
+						<ul>
+							<li class="fragment">Works on the
+							<em>actual</em> information stored in ES (no aggregates, etc.)</li>
+							<li class="fragment">Allows the dynamic exploration of data</li>
+							<li class="fragment">Compose multiple visualizations in a dashboard</li>
+						</ul>
+						
 					</section>
-					<section>
-						<p>Build <em>visualizations</em>, composed in dashboards</p>
+					<section >
+						<img src="images/these_be_my_pokemans_by_MissyInane.png" alt="pokemans" srcset="" />
 					</section>
 				</section>
 				</section>
 				<section id="sql to nosql">
 					<section>
+						<h2>SQL vs. noSQL</h2>
+						<p class="fragment" style="text-align: center"><small>This is going to be fun...</small></p>
+					</section>
+					<section>
 						<h2>SQL vs. noSQL (excerpt)</h2>
+						<p>We lose something to gain something else</p>
 						<table name="SQLnoSQL">
 							<thead>
 								<tr>
@@ -281,8 +288,13 @@
 				</section>
 				<section id="adopting">
 					<section>
+						<h2>Adopting the ELK stack</h2>
+						<p>Everything is Open Source</p>
+						<p class="fragment">Can use a single component (es. Logstash to transform data, or Kibana to view)</p>
+					</section>
+					<section>
 						<h2>Let's throw away SQL</h2>
-						<p>That's not what I said! ಠ_ಠ</p>
+						<p class="fragment">That's not what I said! ಠ_ಠ</p>
 						<p class="fragment">Carefully evaluate if ES is good for your project!</p>
 					</section>
 					<section>
@@ -292,11 +304,17 @@
 							<li>Uses JSON to represent data internally?</li>
 							<li>Will likely change schema one or more times?</li>
 							<li>Will scale rapidly?</li>
-							<li>Benefit from accessing data in predictable times?</li>
+							<li>Benefit from accessing data with a little latency but predictable times?</li>
 						</ul>
 					</section>
 					<section>
-						<h2>I want Kibana in my project</h2>
+						<h2>I want Kibana in my project!</h2>
+						<p>Or: "I need to extract and view data processed by my application"</p>
+						<ul>
+							<li class="fragment">Visualizations and dashboards can be embedded in external projects</li>
+							<li class="fragment">Security and </li>
+						</ul>
+						<p class="fragment">Remember that Kibana ♡ Elasticsearch - no other data sources are allowed!</p>
 					</section>
 				</section>
 				<section id="closing">
