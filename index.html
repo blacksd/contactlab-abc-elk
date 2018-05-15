@@ -131,10 +131,16 @@
 						<pre>
 							<code data-noescape> 
 {
-	"response_length": "8192",
-	"@timestamp": "2018-05-11T09:39:07.000Z",
-	"port": 8080,
-	"service": "CONTACTHUB"
+  "host": "vmta-mngr",
+  "dest_domain": "gmail.com",
+  "conn_id": "55/00-22222-FFAAAAAA",
+  "receiver_ip": "11.22.33.44",
+  "msg_id": "2B/DD-66666-33BBBBB",
+  "event": "D",
+  "multivip_ip": "ip.12.34.43.21",
+  "source_vmta": "vmta1n",
+  "timestamp": "1526373168",
+  "msg_size": "69541"
 }
 							</code>
 						</pre>
@@ -173,7 +179,11 @@
 						<h3>Graphically</h3>
 						<img src="images/cerebro.png" width="420px" />
 						<img src="images/phpmyadmin.png" width="480px" />
-						
+					</section>
+					<section>
+						<h2>Interacting with the cluster</h2>
+						<p class="fragment">Java native interface (application becomes a member of the cluster)</p>
+						<p class="fragment">An awesome REST API</p>
 					</section>
 					<section>
 						<img src="images/elk-components.png" width="500px"/>
@@ -185,12 +195,10 @@
 						<h2>Enter Kibana</h2>
 						<p>Kibana is a data visualization tool built on top of ES</p>
 						<ul>
-							<li class="fragment">Works on the
-							<em>actual</em> information stored in ES (no aggregates, etc.)</li>
+							<li class="fragment">Works on the<em>actual</em> information stored in ES (no aggregates, etc.)</li>
 							<li class="fragment">Allows the dynamic exploration of data</li>
 							<li class="fragment">Compose multiple visualizations in a dashboard</li>
 						</ul>
-						
 					</section>
 					<section >
 						<img src="images/these_be_my_pokemans_by_MissyInane.png" alt="pokemans" srcset="" />
@@ -303,7 +311,6 @@
 						<p class="fragment">Can use/adapt a single component (es. Logstash to transform data, or Kibana to view)</p>
 						<p class="fragment">Extend the usage of the components is definitely doable*</p>
 						<br/>
-						<br/>
 						<p class="fragment">
 							<small>*some Java assembling required</small>
 						</p>
@@ -330,8 +337,8 @@
 						<p class="fragment">Other tool as <a href="https://superset.apache.org/">Superset</a> or <a href="https://grafana.com/">Grafana</a> allow multiple sources</p>
 					</section>
 					<section>
-						<p class="fragment">Visualizations and dashboards can be embedded in external projects</p>
-						<p class="fragment">Monitoring and alerting</p>
+						<p>Visualizations and dashboards can be embedded in external projects</p>
+						<p class="fragment">Monitoring and alerting for applicative triggers</p>
 						<p class="fragment">Machine Learning: Anomaly Detection for Time Series</p>
 						<img class="fragment" src="images/machine-learning.gif" alt="" srcset="" height="310px"/> 
 					</section>
